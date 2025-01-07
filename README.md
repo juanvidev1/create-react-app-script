@@ -35,4 +35,16 @@ The script will ask you for a path to create your app, a name for the app, if yo
 
 Once the script finish the execution, will run automatically your app so you can see the example of a simple form validation like this
 
-![alt text](/readmeAssets/runningExample.png)
+![Execution example](/readmeAssets/runningExample.png)
+
+If you try to send that form, it will automatically validate the data
+![Validation error example on form submit](/readmeAssets/validationExample.png)
+
+The fields will validate on every change and will remove the errors in case that the validation pass
+
+![Validation error on change](/readmeAssets/validationChangeExample.png)
+
+Finally if you fill the fields on the correct way, you will have an alert with the form data, this is just for the example
+
+![Form ready to send](/readmeAssets/success1.png)
+![Form submit success and passed validations](/readmeAssets/success2.png)
