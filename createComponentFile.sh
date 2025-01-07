@@ -39,7 +39,7 @@ import { useCustomForm } from "../../hooks/useCustomForm";
  * @returns formElement
  */
 export const $file_name = () => {
-  const { formData, formErrors, onChange, onValidate } = useSoundlutionsForm();
+  const { formData, formErrors, onChange, onValidate } = useCustomForm();
 
   /**
    * The submit function is created here in the component, because there are to many things you can do with a form
