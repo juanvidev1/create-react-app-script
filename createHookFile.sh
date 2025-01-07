@@ -146,7 +146,7 @@ export const $file_name = () => {
         if (!value) {
           setFormErrors((prevErrors) => ({
             ...prevErrors,
-            [name]: [name]: \`El campo \${name} no puede estar vacío\`,
+            [name]: \`El campo \${name} no puede estar vacío\`,
           }));
           isValid = false;
         } else {
