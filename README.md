@@ -25,6 +25,12 @@ Next you should enter to the repo folder. This step is very important or the scr
 cd create-react-app-script
 ```
 
+After that, you MUST give execution permissions to all the scripts so they can do all their job
+
+```
+sudo chmod +x *
+```
+
 Then simply run the script and the magic will work
 
 ```
@@ -48,3 +54,35 @@ Finally if you fill the fields on the correct way, you will have an alert with t
 
 ![Form ready to send](/readmeAssets/success1.png)
 ![Form submit success and passed validations](/readmeAssets/success2.png)
+
+### <center>&#128640; Now you can start using this react template for your projects &#128640;</center>
+
+But, wait! That's not everything you can do. If you see there are other several files that you can use independently.
+
+For example using the script createBaseComponent you can create a basic structure for a react component, for this you will need the following info:
+
+- A component name (should be with the React standards for naming a new component)
+- A path for create the new file (if you do not provide a path it will take your current path as the initial path)
+- An optional name folder to save the new component (if you don't provide a folder it will use components, and if that folder doesn't exist will create it)
+- A file extension (by default will be jsx)
+
+The usage of the script will be
+
+```
+bash createBaseComponent.sh ExampleComponent /home/juanvidev/Documentos/prueba
+```
+
+In the example above we're creating a new jsx component for React in the folder /home/juanvidev/Documentos/prueba/components (by default the script will create the folder if doesn't exist in the path provided)
+Also the script will create the file with the jsx extension by default as we doesn't provide a different extension for our file
+
+If we take a quickly look to our path we'll see that we should have a components folder, and a folder inside of it called ExampleComponent with an index.jsx file inside it with the code of our component
+
+![Component creation example](/readmeAssets/componentCreateExample.png)
+
+But if you provide all the parameters you will have a different route result with a tsx component created
+
+```
+bash createBaseComponent.sh ExampleComponentTS /home/juanvidev/Documentos/prueba molecules tsx
+```
+
+![Component creation with full parameters](/readmeAssets/componentScript.png)

@@ -77,7 +77,7 @@ export const useSoundlutionsForm = () => {
       if (!value)
         setFormErrors((prevErrors) => ({
           ...prevErrors,
-          [name]: "El campo no puede estar vacío",
+          [name]: \`El campo \${name} no puede estar vacío\`,
         }));
       isValid = validateName(value);
       if (!isValid) {
@@ -146,7 +146,7 @@ export const useSoundlutionsForm = () => {
         if (!value) {
           setFormErrors((prevErrors) => ({
             ...prevErrors,
-            [name]: "El campo no puede estar vacío",
+            [name]: [name]: \`El campo \${name} no puede estar vacío\`,
           }));
           isValid = false;
         } else {

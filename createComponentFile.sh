@@ -40,7 +40,7 @@ import { useSoundlutionsForm } from "../../hooks/useSoundlutionsForm";
  * hooks que sean necesarios.
  * @returns formElement
  */
-export const ExampleForm = () => {
+export const $file_name = () => {
   const { formData, formErrors, onChange, onValidate } = useSoundlutionsForm();
 
   /**
@@ -53,7 +53,7 @@ export const ExampleForm = () => {
     if (onValidate(e)) {
       // Aquí puedes enviar los datos del formulario
       console.log("Datos del formulario:", formData);
-      alert(`Datos del formulario: ${JSON.stringify(formData)}`);
+      alert(\`Datos del formulario: \${JSON.stringify(formData)}\`);
     }
   };
 
