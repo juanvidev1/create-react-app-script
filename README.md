@@ -31,7 +31,7 @@ After that, you MUST give execution permissions to all the scripts so they can d
 sudo chmod +x *
 ```
 
-Then simply run the script and the magic will work
+Then simply run the script and the magic will start working
 
 ```
 bash create-react-app.sh
@@ -44,6 +44,7 @@ Once the script finish the execution, will run automatically your app so you can
 ![Execution example](/readmeAssets/runningExample.png)
 
 If you try to send that form, it will automatically validate the data
+
 ![Validation error example on form submit](/readmeAssets/validationExample.png)
 
 The fields will validate on every change and will remove the errors in case that the validation pass
@@ -52,8 +53,12 @@ The fields will validate on every change and will remove the errors in case that
 
 Finally if you fill the fields on the correct way, you will have an alert with the form data, this is just for the example
 
+<center>
+
 ![Form ready to send](/readmeAssets/success1.png)
 ![Form submit success and passed validations](/readmeAssets/success2.png)
+
+</center>
 
 ### <center>&#128640; Now you can start using this react template for your projects &#128640;</center>
 
