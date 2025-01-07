@@ -37,7 +37,7 @@ Then simply run the script and the magic will work
 bash create-react-app.sh
 ```
 
-The script will ask you for a path to create your app, a name for the app, if you want to work with JavaScript or TypeScript and an optional input for a github repo remote url that, if is provided, will associate your remote repo with your local repo (created by default)
+The script will ask you for a path to create your app, a name for the app, if you want to work with JavaScript or TypeScript, an optional input for specify the node versión you want to use on the template init and an optional input for a github repo remote url that, if is provided, will associate your remote repo with your local repo (created by default)
 
 Once the script finish the execution, will run automatically your app so you can see the example of a simple form validation like this
 

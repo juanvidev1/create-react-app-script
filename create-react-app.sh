@@ -11,24 +11,39 @@ app_name=""
 github_url=""
 extension=""
 apiExtension=""
+node_req_version=""
 
 # Charges the nvm module so can be used inside the bash script
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Esto carga nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 
 echo "Welcome to create react app script"
 read -e -p "Enter the path to create your app: " app_path
 read -p "Enter the name of your app: " app_name
 read -p "Select an option: 1 for JavaScript or 2 for TypeScript: " option
+read -p "Enter the node version you want to use: " node_req_version
 read -p "If you want to create a remote repository, enter the url (make sure you have access rigths first) " github_url
 
-# # This checks if the path exists
-# if [[ ! -d $app_path ]]; then
-#     echo "The path $app_path doesn't exists"
-#     exit 1
-# fi
-
 echo "Creating app in $app_path"
+
+if [[ -z $node_req_version ]]; then
+    node_req_version="22.12.0"
+fi
+
+current_node_version=$(node -v 2>/dev/null)
+
+if [[ $node_req_version != $current_node_version ]]; then
+    echo "Node version is not the same as the required version"
+    echo "Installing node version $node_req_version"
+    
+    if [[ -s "$NVM_DIR/nvm.sh" ]]; then
+        nvm install $node_req_version
+    else
+        echo "Nvm is not installed, please install it first"
+        exit 1
+    fi
+fi 
 
 
 # This creates the directory or the path if doesn't exists
@@ -59,7 +74,7 @@ echo "New path: $new_path"
 sleep 3
 cd $new_path
 echo "Entering your app directory in $new_path"
-nvm use lts/jod # Uses the jod lts version the same that node 22.12.0
+nvm use $node_req_version # Uses the jod lts version the same that node 22.12.0
 node -v > $new_path/.nvmrc
 cd $new_path/src
 mkdir components lib hooks utils
@@ -70,7 +85,7 @@ cp $initial_path/modifyTailwindConfig.sh $app_path
 cp $initial_path/modifyApp.sh $app_path
 cp $initial_path/createREADME.sh $app_path
 bash $app_path/createApiFile.sh api $new_path/src lib $apiExtension
-bash $app_path/createHookFile.sh useSoundlutionsForm $new_path/src/hooks $extension
+bash $app_path/createHookFile.sh useCustomForm $new_path/src/hooks $extension
 bash $app_path/createComponentFile.sh ExampleForm $new_path/src components $extension
 bash $app_path/modifyApp.sh $new_path/src $extension
 sleep 3

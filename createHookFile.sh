@@ -25,7 +25,7 @@ cat<<EOF > $file_path/$file_name.$extension
 import React, { useState } from "react";
 
 /** Este es un custom hook dedicado al manejo de formularios */
-export const useSoundlutionsForm = () => {
+export const $file_name = () => {
   const [formData, setFormData] = React.useState({});
   const [formErrors, setFormErrors] = useState({});
 

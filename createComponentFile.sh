@@ -30,22 +30,19 @@ touch $file_path/$file_folder/$file_name/index.$extension
 
 cat<<EOF > $file_path/$file_folder/$file_name/index.$extension
 import React from "react";
-import { useSoundlutionsForm } from "../../hooks/useSoundlutionsForm";
+import { useCustomForm } from "../../hooks/useCustomForm";
 
 /**
- * Este es un componente de ejemplo que utiliza el hook useSoundlutionsForm
- * El hook useSoundlutionsForm se encarga de manejar el estado del formulario y las validaciones, de acuerdo a lo que se ha experimentado a través
- * de los diversos proyectos que se han trabajado en front-end.
- * Se sugiere no modificar el hook, sino crear un nuevo hook si es necesario, por eso el template incluye una carpeta hooks para crear los custom
- * hooks que sean necesarios.
+ * This is an example component that uses the custom hook useCustomHook
+ * The hook handles all related to a form handler, including validation and error handling.
+ * You're free, once you created the project, to modify the custom form hook or use it as it is.
  * @returns formElement
  */
 export const $file_name = () => {
   const { formData, formErrors, onChange, onValidate } = useSoundlutionsForm();
 
   /**
-   * No se tiene una función de submit en el hook, debido a que todos los submit son muy diferentes
-   * Función que maneja el envío del formulario
+   * The submit function is created here in the component, because there are to many things you can do with a form
    * @param {event} e
    */
   const handleSubmit = (e) => {
@@ -58,9 +55,7 @@ export const $file_name = () => {
   };
 
   /**
-   * Este useEffect se encarga de mostrar en consola los errores del formulario, por si se quiere ver el estado de los errores en el formulario.
-   * En el formulario que se vaya a implementar, se puede eliminar este useEffect y mostrar los errores en el componente que se desee, por ejemplo,
-   * en un componente de error que se muestre en el formulario.
+   * This is an example useEffect, just to see the errorsForm state in the browser console. You can delete if you want to use this same component
    */
   React.useEffect(() => {
     console.log("FormErrors:", formErrors);

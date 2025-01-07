@@ -23,7 +23,7 @@ fi
 
 touch $file_path/$file_folder/$file_name.$extension
 
-cat<<EOF > $file_path/$file_folder/$file_name
+cat<<EOF > $file_path/$file_folder/$file_name.$extension
 /** Este archivo sería el indicado para generar los llamados a una api, cuando sea necesario. Este archivo puede ser modificado libremente y esta
  * función de ejemplo debería ser reemplzada por las funciones que se requieran.
  */
